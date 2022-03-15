@@ -46,3 +46,18 @@
       - https://kafka.js.org/
 
 - Design Ex.: https://whimsical.com/kafka-RoBYTKJYXD2ZX5mS3jymAu
+
+## Consumer
+
+- Cada consumidor precisa ter um groupId definido, se um ou mais consumidores
+  conter o mesmo groupId, as mensagens serão divididas entre eles e essa divisão
+  pode ser desbalanceada
+
+- Para consumir uma mensagem por um pattern, por exemplo um serviço de logger
+  EX: "NOME TÓPICO PARCIAL.\*"
+
+- Para paralisação de um tópico é preciso criar mais de um partição, assim
+  para cada partição é preciso ter a mesma quantidade de consumer em um grupo
+
+- O kafka distribui as mensagens entre as partições com base na key utilizando
+  um algoritmo de hash
